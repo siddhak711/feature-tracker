@@ -80,7 +80,7 @@ async function loadRepo(name: string): Promise<Repo> {
     }
     for (const p of prs.values()) {
       if (used.has(p.number) || p.state === "closed") continue;
-      features.push({ title: p.title, status: prStatus(p), prs: [p], updated: p.updated, source: "PR" });
+      features.push({ title: p.title, status: prStatus(p), prs: [p], updated: p.updated, source: "PR", note: p.state === "merged" ? "Merged; live check not recorded (no REQUESTS.md row)" : undefined });
     }
     return { name, url, features, hasRequests };
   } catch (e: any) {
