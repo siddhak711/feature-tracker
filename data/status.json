@@ -2,13 +2,7 @@
   "updated": "2026-10-27T09:47:23-04:00",
   "repos": {
     "mockbot": {
-      "alerts": [
-        {
-          "level": "outage",
-          "title": "Prod outage: New chat returns 500",
-          "note": "Migration 009 (one thread per agent) is applied to the prod DB, but prod still runs old code 51aec77, whose new-chat insert violates UNIQUE(user_id, agent_id). Existing threads work. Fixed when 4db640e (PR #32) deploys; waiting out the Vercel build limit (~24h, Siddha's call). Verification on localhost meanwhile."
-        }
-      ],
+      "alerts": [],
       "blockers": [
         {
           "title": "DAYTONA_API_KEY",
@@ -21,10 +15,6 @@
         {
           "title": "Neon preview branching",
           "note": "Previews share the prod Neon DB, so preview migrations hit prod. Needs per-preview Neon branches."
-        },
-        {
-          "title": "Vercel build limit",
-          "note": "Hobby account-wide deploy limit hit; 4db640e prod deploy held ~24h. Tracker deploys share this limit."
         }
       ],
       "handoffs": [
