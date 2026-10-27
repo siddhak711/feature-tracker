@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T22:50:00-04:00",
+  "updated": "2026-10-27T09:47:23-04:00",
   "repos": {
     "mockbot": {
       "alerts": [
@@ -29,12 +29,22 @@
       ],
       "handoffs": [
         {
-          "title": "Memory panel — design done, build not started",
+          "title": "Memory panel \u2014 design done, build not started",
           "note": "Designer handed off to Builder ~9:50 PM ET 10/26 (/workspace/mockbot-design/memory-panel/final/: SPEC.md, CONTRAST.md, HANDOFF.md). No PR yet."
         },
         {
-          "title": "Landing page — shelved",
+          "title": "Landing page \u2014 shelved",
           "note": "Shelved on Siddha's call, 10:06 PM ET 10/26."
+        },
+        {
+          "title": "Live check PASS: connector catalog + Notion via Composio (prod d98999f, Oct 27, 9:47 AM ET)",
+          "level": "pass",
+          "note": "GET /api/connectors/composio/toolkits \u2192 200: 8 catalog entries (Notion, GitHub, Linear, Slack, Google Drive, Postgres, Figma, Jira), 100 Composio toolkits. POST /api/connectors/oauth/start {catalogId:notion} \u2192 200 with authorizeUrl connect.composio.dev/link/\u2026; opening it \u2192 307 \u2192 dashboard.composio.dev/link/\u2026 \u2192 200. OAuth not completed (no real accounts)."
+        },
+        {
+          "title": "Live check PASS: GitHub Connect via Composio (prod d98999f, Oct 27, 9:47 AM ET)",
+          "level": "pass",
+          "note": "POST /api/connectors/oauth/start {catalogId:github} \u2192 200 with authorizeUrl connect.composio.dev/link/\u2026; no 'Set GITHUB_OAUTH_CLIENT_ID' error. Link \u2192 307 \u2192 200 on dashboard.composio.dev. OAuth not completed."
         }
       ],
       "prs": {
@@ -54,7 +64,19 @@
         "38": {},
         "39": {},
         "40": {}
-      }
+      },
+      "checks": [
+        {
+          "title": "Live check PASS: connector catalog + Notion via Composio (prod d98999f, Oct 27, 9:47 AM ET)",
+          "level": "pass",
+          "note": "GET /api/connectors/composio/toolkits \u2192 200: 8 catalog entries (Notion, GitHub, Linear, Slack, Google Drive, Postgres, Figma, Jira), 100 Composio toolkits. POST /api/connectors/oauth/start {catalogId:notion} \u2192 200 with authorizeUrl connect.composio.dev/link/\u2026; opening it \u2192 307 \u2192 dashboard.composio.dev/link/\u2026 \u2192 200. OAuth not completed (no real accounts)."
+        },
+        {
+          "title": "Live check PASS: GitHub Connect via Composio (prod d98999f, Oct 27, 9:47 AM ET)",
+          "level": "pass",
+          "note": "POST /api/connectors/oauth/start {catalogId:github} \u2192 200 with authorizeUrl connect.composio.dev/link/\u2026; no 'Set GITHUB_OAUTH_CLIENT_ID' error. Link \u2192 307 \u2192 200 on dashboard.composio.dev. OAuth not completed."
+        }
+      ]
     }
   }
 }
