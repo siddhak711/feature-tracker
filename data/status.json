@@ -1,0 +1,30 @@
+{
+  "updated": "2026-10-26T22:05:00-04:00",
+  "repos": {
+    "mockbot": {
+      "alerts": [
+        { "level": "outage", "title": "Prod outage: New chat returns 500", "note": "Migration 009 (one thread per agent) is applied to the prod DB, but prod still runs old code 51aec77, whose new-chat insert violates UNIQUE(user_id, agent_id). Existing threads work. Fixed when 4db640e (PR #32) deploys; waiting out the Vercel build limit (~24h, Siddha's call). Verification on localhost meanwhile." }
+      ],
+      "blockers": [
+        { "title": "DAYTONA_API_KEY", "note": "Not set; needed for sandbox/browse tools." },
+        { "title": "OpenRouter credits", "note": "Credits needed for model routing." },
+        { "title": "Neon preview branching", "note": "Previews share the prod Neon DB, so preview migrations hit prod. Needs per-preview Neon branches." },
+        { "title": "Vercel build limit", "note": "Hobby account-wide deploy limit hit; 4db640e prod deploy held ~24h. Tracker deploys share this limit." }
+      ],
+      "handoffs": [
+        { "title": "Memory panel", "note": "Handoff in progress — UNVERIFIED: no memory-panel PR found in mockbot (related: #8 'Add durable per-agent memory', closed)." }
+      ],
+      "prs": {
+        "28": { "note": "Smoke test; needs secrets." },
+        "32": { "status": "blocked", "note": "Merged as 4db640e, NOT live: waiting on prod deploy." },
+        "33": {},
+        "35": {},
+        "36": { "note": "YES-MERGE" },
+        "37": {},
+        "38": {},
+        "39": {},
+        "40": {}
+      }
+    }
+  }
+}
